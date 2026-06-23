@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>九游娱乐 – 信息指引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2b 0%, #1f3043 100%);
+            color: #e6edf5;
+            padding: 64px 20px 48px;
+            text-align: center;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 18px;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+        }
+
+        /* 主体浅色区 */
+        .main-section {
+            background-color: #ffffff;
+            border-radius: 28px;
+            margin-top: -32px;
+            padding: 36px 28px 48px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0b1a2b;
+            margin: 36px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #dce5ef;
+            display: inline-block;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 4px;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin: 20px 0 10px;
+        }
+
+        .card {
+            background: #f4f7fc;
+            border-radius: 20px;
+            padding: 22px 20px;
+            border: 1px solid #e8edf5;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -8px rgba(0, 20, 40, 0.12);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f3043;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #33455a;
+        }
+
+        .highlight-link {
+            color: #1b6b8f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #9ebed4;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .highlight-link:hover {
+            color: #0b4b6b;
+            border-bottom-color: #0b4b6b;
+        }
+
+        /* 特色列表 */
+        .feature-list {
+            list-style: none;
+            margin: 16px 0 8px;
+        }
+
+        .feature-list li {
+            padding: 10px 0 10px 32px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231b6b8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+            background-size: 18px;
+            border-bottom: 1px solid #eef3f9;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .note-box {
+            background: #f0f5fb;
+            border-left: 4px solid #1b6b8f;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 28px 0 18px;
+            font-size: 0.96rem;
+            color: #1a2b3c;
+        }
+
+        .faq-item {
+            margin: 14px 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            margin-bottom: 2px;
+            color: #0b1a2b;
+        }
+
+        .faq-item p {
+            margin-left: 0;
+            color: #33455a;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dee6f0;
+            margin: 28px 0 16px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #6f7e92;
+        }
+
+        .footer-note a {
+            color: #1b6b8f;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .main-section {
+                padding: 24px 16px 36px;
+                margin-top: -24px;
+            }
+            .card-grid {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <h1>九游娱乐 · 信息指引</h1>
+        <p class="sub">从日常查询到对照参考，一份结构清晰的说明页</p>
+        <span class="tagline">用途卡片 · 人群指南 · 延伸阅读</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="main-section">
+
+        <!-- 日常查询角度 -->
+        <h2 class="section-title">日常查询 · 对照参考</h2>
+        <p style="margin-bottom: 16px;">如果你正在了解娱乐类平台的信息，可以从以下用途卡片中找到适合的切入点。以下内容围绕<a href="https://wap-official-jiuyou.com" class="highlight-link">九游娱乐</a>的常见使用场景整理，便于快速对照与延伸阅读。</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>📋 信息浏览</h3>
+                <p>查看平台提供的内容分类、活动公告及常见说明，适合初次接触时做基础了解。</p>
+            </div>
+            <div class="card">
+                <h3>🔍 功能对照</h3>
+                <p>将不同入口、版本或服务项目并列对比，帮助理清各自侧重点与使用路径。</p>
+            </div>
+            <div class="card">
+                <h3>📎 延伸阅读</h3>
+                <p>通过站内指引或相关页面，进一步查阅条款、帮助文档或更新日志等补充资料。</p>
+            </div>
+            <div class="card">
+                <h3>🧭 日常索引</h3>
+                <p>将常用入口、客服联系方式、技术支持条目集中整理，方便随时调取。</p>
+            </div>
+        </div>
+
+        <!-- 适合人群 + 特点 -->
+        <h2 class="section-title">适合人群与特点</h2>
+        <ul class="feature-list">
+            <li><strong>偏好清晰结构的使用者</strong> —— 希望页面能直接索引关键信息，减少重复跳转。</li>
+            <li><strong>关注内容多样性的访客</strong> —— 经常浏览不同品类，期待分类明确、更新及时。</li>
+            <li><strong>习惯对照参考的阅读者</strong> —— 喜欢将不同选项并列比较，再做出自己的判断。</li>
+            <li><strong>轻度查询与常规浏览者</strong> —— 不需要深度操作，但希望快速定位到所需条目。</li>
+        </ul>
+
+        <!-- 用途卡片 第二组（差异化） -->
+        <h2 class="section-title">常见查询场景</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>🎯 快速索引</h3>
+                <p>将平台功能、分类标签或热门内容整理成条目，减少搜索耗时。</p>
+            </div>
+            <div class="card">
+                <h3>📊 对比概览</h3>
+                <p>并列展示不同选项的侧重点，适用于版本差异或内容类型选择。</p>
+            </div>
+            <div class="card">
+                <h3>📚 帮助与指引</h3>
+                <p>集中常见问题、操作说明与政策摘要，方便随时查阅。</p>
+            </div>
+        </div>
+
+        <!-- 自然链接段落 + 延伸阅读 -->
+        <div class="note-box">
+            <strong>📎 延伸阅读建议</strong><br>
+            如果你希望进一步了解平台的整体定位与服务内容，可以直接访问<a href="https://wap-official-jiuyou.com" class="highlight-link">九游娱乐</a>，其中包含更完整的分类导航与官方说明，适合作为对照参考的起点。
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title">常见问题摘要</h2>
+        <div class="faq-item">
+            <strong>❓ 如何快速找到所需功能？</strong>
+            <p>通常可以通过首页的分类模块或站内搜索进行定位，也可以参考页面内的用途卡片分组。</p>
+        </div>
+        <div class="faq-item">
+            <strong>❓ 内容更新频率如何？</strong>
+            <p>平台会根据运营节奏定期补充和调整内容，具体更新时间可留意相关公告或栏目标识。</p>
+        </div>
+        <div class="faq-item">
+            <strong>❓ 是否提供多端同步？</strong>
+            <p>不同设备的使用体验可能存在差异，建议直接在对应设备上访问<a href="https://wap-official-jiuyou.com" class="highlight-link">九游娱乐</a>，查看实际呈现与功能支持。</p>
+        </div>
+
+        <hr>
+
+        <!-- 结尾提示 -->
+        <div class="footer-note">
+            <p>本页为信息整理型介绍，所有内容仅供对照与参考。<br>
+            如需获取完整服务，请以 <a href="https://wap-official-jiuyou.com">九游娱乐</a> 官方页面为准。</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
